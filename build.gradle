@@ -1,0 +1,91 @@
+plugins {
+    id "de.dfki.mary.voicebuilding-legacy"
+}
+
+group 'de.dfki.mary'
+version '0.1.0-SNAPSHOT'
+
+dependencies {
+    marytts group: 'de.serbski-institut', name: 'marytts-lang-dsb', version: '0.1.0-SNAPSHOT'
+}
+
+configurations.all {
+    exclude module: 'groovy-all'
+    resolutionStrategy {
+        dependencySubstitution {
+            substitute module('de.dfki.mary:marytts-lang-dsb') with module("de.serbski-institut:marytts-lang-dsb:0.1.0-SNAPSHOT")
+        }
+    }
+}
+
+marytts {
+    voice {
+        name = 'dsb_poc'
+        gender = 'male'
+        language = 'dsb'
+        type = 'unit selection'
+        samplingRate = 16000
+    }
+}
+
+task copyData(type: CopyData) {
+    wavSrcDir = file('../audio-data/wav')
+    wavDestDir = layout.buildDirectory.dir('wav_orig')
+    textSrcDir = file('../audio-data/text')
+    textDestDir = layout.buildDirectory.dir('text')
+    labSrcDir = file('../audio-data/lab')
+    labDestDir = layout.buildDirectory.dir('lab')
+}
+
+wav {
+    srcDir = copyData.wavDestDir
+}
+
+basenames {
+    textDir = copyData.textDestDir
+    labDir = copyData.labDestDir
+}
+
+generateHalfPhoneFeatureDefinitionFile {
+    dependsOn generateHalfPhoneFeatures
+}
+
+class CopyData extends DefaultTask {
+
+    @InputDirectory
+    final DirectoryProperty wavSrcDir = project.objects.directoryProperty()
+
+    @InputDirectory
+    final DirectoryProperty textSrcDir = project.objects.directoryProperty()
+
+    @InputDirectory
+    final DirectoryProperty labSrcDir = project.objects.directoryProperty()
+
+    @OutputDirectory
+    final DirectoryProperty wavDestDir = project.objects.directoryProperty()
+
+    @OutputDirectory
+    final DirectoryProperty textDestDir = project.objects.directoryProperty()
+
+    @OutputDirectory
+    final DirectoryProperty labDestDir = project.objects.directoryProperty()
+
+    @TaskAction
+    void copy() {
+        project.copy {
+            from wavSrcDir
+            into wavDestDir
+            include '*.wav'
+        }
+        project.copy {
+            from textSrcDir
+            into textDestDir
+            include '*.txt'
+        }
+        project.copy {
+            from labSrcDir
+            into labDestDir
+            include '*.lab'
+        }
+    }
+}
