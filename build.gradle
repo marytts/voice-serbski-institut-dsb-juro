@@ -5,16 +5,14 @@ plugins {
 group 'de.dfki.mary'
 version '0.1.0-SNAPSHOT'
 
-dependencies {
-    marytts group: 'de.serbski-institut', name: 'marytts-lang-dsb', version: '0.1.0-SNAPSHOT'
+repositories {
+    mavenCentral()
 }
 
 configurations.all {
     exclude module: 'groovy-all'
     resolutionStrategy {
-        dependencySubstitution {
-            substitute module('de.dfki.mary:marytts-lang-dsb') with module("de.serbski-institut:marytts-lang-dsb:0.1.0-SNAPSHOT")
-        }
+        force 'de.dfki.mary:marytts-lang-dsb:0.1.0'
     }
 }
 

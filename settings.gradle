@@ -1,3 +1,2 @@
-rootProject.name = 'voice-dsb-poc'
-includeBuild '../marytts-lang-dsb'
+rootProject.name = 'voice-serbski-institut-dsb'
 includeBuild 'gradle-marytts-voicebuilding-plugin'
