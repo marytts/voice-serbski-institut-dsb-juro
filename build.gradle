@@ -10,7 +10,6 @@ repositories {
 }
 
 configurations.all {
-    exclude module: 'groovy-all'
     resolutionStrategy {
         force 'de.dfki.mary:marytts-lang-dsb:0.1.0'
     }
