@@ -41,6 +41,8 @@ wav {
 basenames {
     textDir = copyData.textDestDir
     labDir = copyData.labDestDir
+    exclude 'Miks107_2',
+            'Miks52'
 }
 
 generateHalfPhoneFeatureDefinitionFile {
