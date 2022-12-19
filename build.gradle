@@ -17,7 +17,7 @@ configurations.all {
 
 marytts {
     voice {
-        name = 'dsb_poc'
+        name = 'serbski-institut-dsb-juro'
         gender = 'male'
         language = 'dsb'
         type = 'unit selection'
