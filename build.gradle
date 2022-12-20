@@ -25,66 +25,21 @@ marytts {
     }
 }
 
-task copyData(type: CopyData) {
-    wavSrcDir = file('../audio-data/wav')
-    wavDestDir = layout.buildDirectory.dir('wav_orig')
-    textSrcDir = file('../audio-data/text')
-    textDestDir = layout.buildDirectory.dir('text')
-    labSrcDir = file('../audio-data/lab')
-    labDestDir = layout.buildDirectory.dir('lab')
-}
-
 wav {
-    srcDir = copyData.wavDestDir
+    srcDir = layout.projectDirectory.dir('wav')
 }
 
 basenames {
-    textDir = copyData.textDestDir
-    labDir = copyData.labDestDir
+    textDir = layout.projectDirectory.dir('text')
+    labDir = layout.projectDirectory.dir('lab')
     exclude 'Miks107_2',
             'Miks52'
 }
 
-generateHalfPhoneFeatureDefinitionFile {
-    dependsOn generateHalfPhoneFeatures
+generateAllophones {
+    srcDir = layout.projectDirectory.dir('text')
 }
 
-class CopyData extends DefaultTask {
-
-    @InputDirectory
-    final DirectoryProperty wavSrcDir = project.objects.directoryProperty()
-
-    @InputDirectory
-    final DirectoryProperty textSrcDir = project.objects.directoryProperty()
-
-    @InputDirectory
-    final DirectoryProperty labSrcDir = project.objects.directoryProperty()
-
-    @OutputDirectory
-    final DirectoryProperty wavDestDir = project.objects.directoryProperty()
-
-    @OutputDirectory
-    final DirectoryProperty textDestDir = project.objects.directoryProperty()
-
-    @OutputDirectory
-    final DirectoryProperty labDestDir = project.objects.directoryProperty()
-
-    @TaskAction
-    void copy() {
-        project.copy {
-            from wavSrcDir
-            into wavDestDir
-            include '*.wav'
-        }
-        project.copy {
-            from textSrcDir
-            into textDestDir
-            include '*.txt'
-        }
-        project.copy {
-            from labSrcDir
-            into labDestDir
-            include '*.lab'
-        }
-    }
+processPhoneLabels {
+    srcDir = layout.projectDirectory.dir('lab')
 }
