@@ -11,7 +11,7 @@ repositories {
     mavenCentral()
 }
 
-configurations.all {
+configurations.configureEach {
     resolutionStrategy {
         force 'de.dfki.mary:marytts-lang-dsb:0.1.1'
     }
