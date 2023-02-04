@@ -4,9 +4,6 @@
 [submodule "gradle-marytts-component-plugin"]
 	path = gradle-marytts-component-plugin
 	url = https://github.com/marytts/gradle-marytts-component-plugin.git
-[submodule "marytts-lang-dsb"]
-	path = marytts-lang-dsb
-	url = https://github.com/marytts/marytts-lang-dsb.git
 [submodule "serbski-institut-dsb-data"]
 	path = serbski-institut-dsb-data
 	url = https://github.com/psibre/serbski-institut-dsb-data.git
