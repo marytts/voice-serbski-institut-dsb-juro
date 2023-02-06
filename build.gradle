@@ -63,5 +63,4 @@ wav {
 basenames {
     textDir = tasks.named('extractTextFiles').get().destDir
     labDir = tasks.named('extractLabFiles').get().destDir
-    exclude 'Miks26'
 }
