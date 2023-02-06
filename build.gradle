@@ -11,9 +11,9 @@ repositories {
     mavenCentral()
 }
 
-configurations.all {
+configurations.configureEach {
     resolutionStrategy {
-        force 'de.dfki.mary:marytts-lang-dsb:0.1.0'
+        force 'de.dfki.mary:marytts-lang-dsb:0.1.1'
     }
 }
 
@@ -35,7 +35,7 @@ def downloadDataTask = tasks.register('downloadData') {
     outputs.file flacFile
     outputs.file yamlFile
     doLast {
-        def baseUrl = 'https://github.com/marytts/serbski-institut-dsb-data/releases/download/v0.1.0'
+        def baseUrl = 'https://github.com/marytts/serbski-institut-dsb-data/releases/download/v0.1.1'
         download.run {
             src([
                     "$baseUrl/serbski-institut-dsb-data.flac",
@@ -63,5 +63,4 @@ wav {
 basenames {
     textDir = tasks.named('extractTextFiles').get().destDir
     labDir = tasks.named('extractLabFiles').get().destDir
-    exclude 'Miks26'
 }
