@@ -35,7 +35,7 @@ def downloadDataTask = tasks.register('downloadData') {
     outputs.file flacFile
     outputs.file yamlFile
     doLast {
-        def baseUrl = 'https://github.com/marytts/serbski-institut-dsb-data/releases/download/v0.1.0'
+        def baseUrl = 'https://github.com/marytts/serbski-institut-dsb-data/releases/download/v0.1.1'
         download.run {
             src([
                     "$baseUrl/serbski-institut-dsb-data.flac",
