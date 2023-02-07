@@ -4,6 +4,9 @@ Changelog
 [Unreleased]
 ------------
 
+[v0.1.0-beta2] - 2023-02-07
+---------------------------
+
 ### Added
 
 - Changelog
@@ -20,4 +23,5 @@ Changelog
 Initial pre-release
 
 [Unreleased]: https://github.com/marytts/voice-serbski-institut-dsb-juro
+[v0.1.0-beta2]: https://github.com/marytts/voice-serbski-institut-dsb-juro/releases/tag/v0.1.0-beta2
 [v0.1.0-beta1]: https://github.com/marytts/voice-serbski-institut-dsb-juro/releases/tag/v0.1.0-beta1
