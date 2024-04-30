@@ -4,6 +4,9 @@ Changelog
 [Unreleased]
 ------------
 
+[v0.1.0-beta3] - 2024-04-30
+---------------------------
+
 ### Removed
 
 - Component plugin submodule
@@ -35,5 +38,6 @@ Changelog
 Initial pre-release
 
 [Unreleased]: https://github.com/marytts/voice-serbski-institut-dsb-juro
+[v0.1.0-beta3]: https://github.com/marytts/voice-serbski-institut-dsb-juro/releases/tag/v0.1.0-beta2
 [v0.1.0-beta2]: https://github.com/marytts/voice-serbski-institut-dsb-juro/releases/tag/v0.1.0-beta2
 [v0.1.0-beta1]: https://github.com/marytts/voice-serbski-institut-dsb-juro/releases/tag/v0.1.0-beta1
