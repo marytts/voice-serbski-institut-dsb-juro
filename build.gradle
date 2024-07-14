@@ -13,7 +13,7 @@ repositories {
 
 configurations.configureEach {
     resolutionStrategy {
-        force 'de.dfki.mary:marytts-lang-dsb:0.1.2'
+        force 'de.dfki.mary:marytts-lang-dsb:0.2.0-SNAPSHOT'
     }
 }
 
