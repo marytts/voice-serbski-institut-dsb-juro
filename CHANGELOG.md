@@ -4,6 +4,15 @@ Changelog
 [Unreleased]
 ------------
 
+### Fixed
+
+- JTok dependency resolution
+
+### Changed
+
+- Upgraded language component to v0.1.2
+- Upgraded data to v0.1.2
+
 [v0.1.0-beta3] - 2024-04-30
 ---------------------------
 
