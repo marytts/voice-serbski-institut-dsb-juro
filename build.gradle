@@ -21,7 +21,7 @@ plugins {
 }
 
 group 'de.dfki.mary'
-version '0.1.0-beta5'
+version '0.1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
