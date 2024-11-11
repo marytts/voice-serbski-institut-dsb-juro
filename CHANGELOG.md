@@ -4,6 +4,11 @@ Changelog
 [Unreleased]
 ------------
 
+### Changed
+
+- Upgraded language component to v0.2.1
+- Upgraded data to v0.2.1
+
 [v0.1.0-beta4] - 2024-10-04
 ---------------------------
 
@@ -13,8 +18,8 @@ Changelog
 
 ### Changed
 
-- Upgraded language component to v0.1.2
-- Upgraded data to v0.1.2
+- Upgraded language component to v0.2.0
+- Upgraded data to v0.2.0
 
 [v0.1.0-beta3] - 2024-04-30
 ---------------------------
